@@ -13,6 +13,6 @@ onMounted(async () => { r.value = await getJSON(`/api/runs/${props.id}`) })
 <p>用布 <strong>{{ r.result?.meters }} m</strong></p>
 <PanelCut v-if="r.result" :panels="r.result.panels" :cut-height="r.result.cut_height"
   :meters="r.result.meters" :finished-width="r.result.finished_width" />
-<p class="dim">旧单按编号打开时展示开放视图字段；回位厘米保留，成品宽与米数取开放路径结果。</p>
+<p class="dim">旧单按编号打开时展示落库快照：回位厘米、成品宽、幅数与米数均为写入时的结果。</p>
 <p v-if="r.note">备注：{{ r.note }}</p>
 </div></template>
